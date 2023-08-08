@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MagicSwissWeed/static/css/main.fbf7c1af.css",
-    "main.js": "/MagicSwissWeed/static/js/main.e8803ba6.js",
+    "main.css": "/MagicSwissWeed/static/css/main.1fe5fe92.css",
+    "main.js": "/MagicSwissWeed/static/js/main.90eb39a8.js",
     "static/js/787.5f84c8ec.chunk.js": "/MagicSwissWeed/static/js/787.5f84c8ec.chunk.js",
     "index.html": "/MagicSwissWeed/index.html",
-    "main.fbf7c1af.css.map": "/MagicSwissWeed/static/css/main.fbf7c1af.css.map",
-    "main.e8803ba6.js.map": "/MagicSwissWeed/static/js/main.e8803ba6.js.map",
+    "main.1fe5fe92.css.map": "/MagicSwissWeed/static/css/main.1fe5fe92.css.map",
+    "main.90eb39a8.js.map": "/MagicSwissWeed/static/js/main.90eb39a8.js.map",
     "787.5f84c8ec.chunk.js.map": "/MagicSwissWeed/static/js/787.5f84c8ec.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbf7c1af.css",
-    "static/js/main.e8803ba6.js"
+    "static/css/main.1fe5fe92.css",
+    "static/js/main.90eb39a8.js"
   ]
 }
