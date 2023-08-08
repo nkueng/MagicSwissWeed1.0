@@ -2,12 +2,10 @@ import "./App.css";
 import { useState, useEffect } from "react";
 
 // some constant definitions
-// "https://api.existenz.ch/apiv1/hydro/latest?locations=2018&parameters=flow%2C%20temperature&app=MagicSwissWeed&version=0.1.0";
-var fetch_url = "https://api.existenz.ch/apiv1/hydro/latest?";
-var locations = {
-  Bremgarten: "2018",
-  Limmat: "2099",
-};
+var fetch_url =
+  "https://api.existenz.ch/apiv1/hydro/latest?locations=2018&parameters=flow%2C%20temperature&app=MagicSwissWeed&version=0.1.0";
+// var fetch_url = "https://api.existenz.ch/apiv1/hydro/latest?";
+
 // solve this with the map function
 // data.map(({ id, title }) => (
 //   <li key={id}>
@@ -28,8 +26,8 @@ export default function App() {
     const getData = async () => {
       try {
         const response = await fetch(
-          // fetch_url
-          `https://jsonplaceholder.typicode.com/posts?_limit=10`
+          fetch_url
+          // `https://jsonplaceholder.typicode.com/posts?_limit=10`
         );
         if (!response.ok) {
           throw new Error(
@@ -62,14 +60,14 @@ export default function App() {
       <header className="App-header">
         <h1>MagicSwissWeed</h1>
         {/* display content depending on state */}
-        {loading && <div>A moment please...</div>}
+        {loading && <div>Fetching the latest measurements...</div>}
         {error && (
           <div>{`There is a problem fetching the post data - ${error}`}</div>
         )}
         {data && (
           <ul>
             <li>
-              Bremgarten: 🌊{flow} m^3/s, 🌡{temp}°C
+              Bremgarten: 🌊 {flow} m<sup>3</sup>/s, 🌡 {temp}°C
             </li>
           </ul>
         )}

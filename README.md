@@ -4,33 +4,51 @@ An overview of current surfing conditions in Switzerland.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+I started this project because I am a passionate surfer in a landlocked country (without any neat forecasting app yet) and because I occasionally like to work with code.
+
+The idea is simple enough: Surfing in Switzerland means surfing in rivers, but this only works if there's enough water in them. Luckily, the Swiss government runs frequent measurements of the water flow and a really cool dude created an API to fetch those measurements. All I have to do is get a few values of interest from this API. Simple, right?
+
+Well, not if you've never worked with APIs and have very limited knowledge of websites. Nevertheless, this makes for a perfect learning project: a modest target and a long-time wish to finally work with JavaScript. Now, let's hope the tool will be of value to Swiss surfers too.
 
 ## Development
 
-If you would like to take my work further:
+In the project directory, you can run:
 
-### Installing
+`npm start`
 
-- How/where to download your program
-- Any modifications needed to be made to files/folders
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Executing program
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- How to run the program
-- Step-by-step bullets
+### Debugging
 
-```
-code blocks for commands
-```
+For Visual Studio Code, install [JavaScript Debugger](https://marketplace.visualstudio.com/items?itemName=ms-vscode.js-debug-nightly) and use the `Chrome: launch` template to debug with breakpoints.
+
+`npm test`
+
+Launches the test runner in the interactive watch mode.\
+Test scripts have to be tailored to your project.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+`npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+`npm run deploy`
+
+Pushes the `build` folder to an existing branch called `gh-pages` and publishes the website.
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Help
 
-Any advise for common problems or issues.
-
-```
-command to run if program contains helper info
-```
+For issues with React: https://react.dev/community.
 
 ## Authors
 

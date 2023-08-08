@@ -31,7 +31,7 @@
   color: rgb(0, 184, 230);
 }
 
-.Footer{
+.Footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -44,6 +44,29 @@
   list-style: none;
 }
 
-.Footer_item{
+.Footer_item {
   margin: auto;
+}
+
+/* for future use */
+.temperature_bar {
+  background: rgb(0, 18, 159);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 18, 159, 1) 0%,
+    rgba(48, 230, 235, 1) 30%,
+    rgba(255, 239, 0, 1) 70%,
+    rgba(255, 64, 0, 1) 100%
+  );
+}
+.conditions_bar {
+  background: rgb(250, 49, 49);
+  background: linear-gradient(
+    90deg,
+    rgba(250, 49, 49, 1) 0%,
+    rgba(241, 134, 36, 1) 25%,
+    rgba(232, 212, 24, 1) 50%,
+    rgba(129, 223, 25, 1) 75%,
+    rgba(9, 119, 13, 1) 100%
+  );
 }
