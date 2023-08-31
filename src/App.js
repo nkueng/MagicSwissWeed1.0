@@ -56,7 +56,7 @@ fetch_url +=
     .join("%2C");
 fetch_url += "&parameters=" + parameters.join("%2C");
 // TODO: get version from package.json
-fetch_url += "&app=MagicSwissWeed&version=0.1.0";
+fetch_url += "&app=MagicSwissWeed&version=0.2.0";
 
 function check_if_meas_undefined(meas) {
   if (meas === undefined) {

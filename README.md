@@ -1,6 +1,6 @@
 # MagicSwissWeed
 
-An overview of current surfing conditions in Switzerland.
+An overview of current surfing conditions in Switzerland. [Check it out](https://nkueng.github.io/MagicSwissWeed/).
 
 ## Description
 
