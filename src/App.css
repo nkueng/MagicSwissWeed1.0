@@ -106,7 +106,7 @@ p {
   color: #3b91f4;
 }
 .temp_2 {
-  color: #7cecae;
+  color: #7cece5;
 }
 .temp_3 {
   color: #f6db2a;
@@ -137,7 +137,14 @@ ul {
   background-color: #3bbae8;
 }
 
-.Footer a:visited {
+/* stack footer items vertically on small touch screens */
+@media only screen and (max-width: 850px) {
+  .Footer {
+    flex-direction: column;
+  }
+}
+
+.Footer a {
   color: white;
 }
 
