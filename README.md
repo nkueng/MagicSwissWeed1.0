@@ -78,17 +78,12 @@ For issues with React: https://react.dev/community.
 
 Nicola Küng
 
-## Version History
-
-- 0.1
-  - Initial commit
-
 ## Roadmap
 
 ### V1
 
-- [ ] Simple text-only display of current flow values in selected Swiss surfing spots
-- [ ] Color-coded numbers to indicate water temperatures
+- [x] Simple text-only display of current flow values in selected Swiss surfing spots
+- [x] Color-coded numbers to indicate water temperatures
 
 ### V2
 
