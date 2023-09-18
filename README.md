@@ -72,11 +72,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Help
 
-For issues with React: https://react.dev/community.
-
-## Authors
-
-Nicola Küng
+For issues with React: <https://react.dev/community>.
 
 ## Roadmap
 

@@ -2,6 +2,10 @@ import "./App.css";
 import { river_locations, bungee_locations } from "./locations";
 import { render_conditions } from "./renderFunctions";
 import { useState, useEffect } from "react";
+import ReactGA from "react-ga4";
+
+// google analytics
+ReactGA.initialize("G-0M0X4LT868");
 
 const parameters = ["flow", "temperature"];
 
@@ -59,7 +63,7 @@ export default function App() {
       {/* header */}
       <header className="App-header">
         <div className="title">
-          <h1>magicswissweed</h1>
+          <h1>MagicSwissWeed</h1>
           <p>Current surfing conditions in Switzerland</p>
         </div>
         {/* display content depending on state */}
@@ -91,12 +95,7 @@ export default function App() {
             </a>
           </div>
           <div className="Footer_item wide">
-            © 2023{" "}
-            {/* <a className="Link" href="https://academicsurfclub.ch"> */}
-            Academic Surf Club Switzerland
-            {/* </a> */}
-            <br />
-            inspired by <a href="https://aare.guru">aare.guru</a>
+            © 2023 Academic Surf Club Switzerland
           </div>
           <div className="Footer_item">
             <a
