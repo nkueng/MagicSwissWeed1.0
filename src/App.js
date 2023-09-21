@@ -2,10 +2,7 @@ import "./App.css";
 import { river_locations, bungee_locations } from "./locations";
 import { render_conditions } from "./renderFunctions";
 import { useState, useEffect } from "react";
-import ReactGA from "react-ga4";
-
-// google analytics
-ReactGA.initialize("G-0M0X4LT868");
+// import ReactGA from "react-ga4";
 
 const parameters = ["flow", "temperature"];
 
@@ -27,6 +24,9 @@ fetch_url += "&app=MagicSwissWeed&version=" + appVersion;
 
 // main React app that gets displayed
 export default function App() {
+  // google analytics
+  // ReactGA.initialize("G-0M0X4LT868");
+
   // define states for fetching data
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
