@@ -2,7 +2,6 @@ import "./App.css";
 import { river_locations, bungee_locations } from "./locations";
 import { render_conditions } from "./renderFunctions";
 import { useState, useEffect } from "react";
-// import ReactGA from "react-ga4";
 
 const parameters = ["flow", "temperature"];
 
@@ -18,15 +17,11 @@ fetch_url +=
     .map(({ id }) => id)
     .join("%2C");
 fetch_url += "&parameters=" + parameters.join("%2C");
-// TODO: get version from package.json
 const appVersion = require("../package.json").version;
 fetch_url += "&app=MagicSwissWeed&version=" + appVersion;
 
 // main React app that gets displayed
 export default function App() {
-  // google analytics
-  // ReactGA.initialize("G-0M0X4LT868");
-
   // define states for fetching data
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -55,9 +50,16 @@ export default function App() {
       }
     };
     getData();
+    // refresh data every 5 minutes
+    // https://upmostly.com/tutorials/setinterval-in-react-components-using-hooks
+    const interval = setInterval(() => {
+      getData();
+      console.log("Refreshed measurements!");
+    }, 5 * 60 * 1000); // 5 minutes in milliseconds
+    return () => clearInterval(interval);
   }, []);
 
-  // return HTML including variables computed above for displaying
+  // return HTML including state variables computed above for displaying
   return (
     <div className="App">
       {/* header */}
@@ -69,7 +71,13 @@ export default function App() {
         {/* display content depending on state */}
         {loading && <div>Fetching the latest measurements...</div>}
         {error && (
-          <div>{`There is a problem fetching the post data - ${error}`}</div>
+          <div>
+            {`There is a problem fetching the latest measurements - ${error} `}
+            <p>
+              Try again later or report the problem via the feedback form linked
+              below.
+            </p>
+          </div>
         )}
         {data && (
           <div className="surfspots">
