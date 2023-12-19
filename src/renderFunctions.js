@@ -9,6 +9,16 @@ function check_if_meas_undefined(meas) {
   return meas;
 }
 
+function flow2stars(_flow, _location) {
+  if(_location.ranking === undefined) return undefined;
+  if(_flow < _location.min || _flow > _location.max) return 0;
+  else if(_flow < _location.ranking.oneStarMax) return 1;
+  else if(_flow < _location.ranking.twoStarMax) return 2;
+  else if(_flow < _location.ranking.threeStarMax) return 3;
+  else if(_flow < _location.ranking.fourStarMax) return 4;
+  else if(_flow < _location.ranking.fiveStarMax) return 5;
+}
+
 // convert flow value to color
 function flow2color(_flow, _location) {
   if (_flow < _location.min) {
@@ -51,6 +61,53 @@ function temp2color(_temp) {
   return "temp_4";
 }
 
+function Stars(props) {
+  if(props.nrOfStars === undefined) return <div className="stars invisible"></div>;
+
+  let stars = [];
+  for (let i = 0; i < 5; i++) {
+    stars.push(i < props.nrOfStars ? <FilledStar /> : <EmptyStar />);
+  }
+  return <div className="stars">{stars}</div>;
+}
+
+function FilledStar() {
+  return <p className="filledStar"> ★ </p>;
+}
+
+function EmptyStar() {
+  return <p className="emptyStar"> ✰ </p>;
+}
+
+function Measurements(props) {
+  return <>
+    <div className="measurements">
+      {/* first row */}
+      <div className="flow meas">
+        <div className={props.flow_color}>{props.flow}</div>
+        <div className="unit smallFont">
+          m<sup>3</sup>/s
+        </div>
+
+        {/* add warning sign if flow reaches dangerous levels */}
+        {props.flow_color === "flow_danger" && (
+            <div
+                className="danger"
+                title="Moderate flood danger, be careful!"
+            >
+              &ensp; ⚠️
+            </div>
+        )}
+      </div>
+      {/* second row */}
+      <div className="temp meas">
+        <div className={props.temp_color}>{props.temp}</div>
+        <div className="unit">°C</div>
+      </div>
+    </div>
+  </>;
+}
+
 // render fetched data useful for displaying
 /**
  *
@@ -77,53 +134,32 @@ export function render_conditions(_data, _locations) {
     // color-code flow and temperature
     let flow_color_i = flow2color(flow_i, _locations[i]);
     let temp_color_i = temp2color(temp_i);
+    let nrOfStars = flow2stars(flow_i, _locations[i]);
 
     // then put them into a new container with all info for rendering
-    let render_dict = {
+    render_array[i] = {
       name: _locations[i].name,
       link:
-        "https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/" +
-        _locations[i].id,
+          "https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/" +
+          _locations[i].id,
       flow: Math.round(flow_i),
       flow_color: flow_color_i,
       temp: Math.round(temp_i),
       temp_color: temp_color_i,
+      nrOfStars: nrOfStars
     };
-    render_array[i] = render_dict;
   }
   return (
     <div className="spotlist">
       {render_array.map(
-        ({ name, link, flow, flow_color, temp, temp_color }) => (
-          // container for 2-col grid
+        ({ name, link, flow, flow_color, temp, temp_color, nrOfStars }) => (
           <div key={name} className="spot">
-            {/* first col */}
             <div className="spotname">
               <a href={link} target="_blank" rel="noreferrer">
                 {name}
               </a>
-            </div>
-            {/* second col */}
-            {/* first row */}
-            <div className="flow meas">
-              <div className={flow_color}>{flow}</div>
-              <div className="unit">
-                m<sup>3</sup>/s
-              </div>
-              {/* add warning sign if flow reaches dangerous levels */}
-              {flow_color === "flow_danger" && (
-                <div
-                  className="danger"
-                  title="Moderate flood danger, be careful!"
-                >
-                  &ensp; ⚠️
-                </div>
-              )}
-            </div>
-            {/* second row */}
-            <div className="temp meas">
-              <div className={temp_color}>{temp}</div>
-              <div className="unit">°C</div>
+              <Measurements flow_color={flow_color} flow={flow} temp_color={temp_color} temp={temp}/>
+              <Stars nrOfStars={nrOfStars}></Stars>
             </div>
           </div>
         )

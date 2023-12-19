@@ -6,12 +6,12 @@
 }
 
 h1 {
-  margin-block-end: 0%;
+  margin-block-end: 0;
 }
 
 p {
   font-size: 92%;
-  margin-block-start: 0%;
+  margin-block-start: 0;
 }
 
 /* .App-logo {
@@ -39,46 +39,78 @@ p {
   color: #3bbae8;
 }
 
+.riversurf {
+  flex: 1;
+}
+
+.bungeesurf {
+  flex: 1;
+}
+
+.spotlist {
+  padding: 0 100px;
+}
+
 .spot {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   margin-bottom: 10px;
   color: #000000;
 }
 
 .spotname {
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: right;
-  grid-row: 1 / 3;
+  justify-content: center;
   font-size: 130%;
   font-weight: bold;
   /* background-color: blueviolet; */
 }
 
 .spotname a {
+  flex: 1;
   text-decoration: none;
   color: #000000;
 }
 
 .meas {
-  text-align: left;
+  padding: 0 20px;
+  text-align: center;
   font-weight: bold;
+  display: flex;
+  align-content: center;
 }
 
 .unit {
+  display: inline;
+}
+
+.smallFont {
   font-size: 70%;
 }
 
 .flow {
+  flex: 1;
   /* background-color: cadetblue; */
-  display: flex;
   align-items: flex-end;
   font-size: 120%;
 }
 
-.temp {
+.measurements {
   display: flex;
+  flex-direction: column;
+  flex: 1
+}
+
+.stars {
+  flex: 1;
+  padding-top: 25px;
+  align-items: center;
+  display: flex;
+}
+
+.temp {
+  flex: 1;
 
   font-size: 90%;
   /* background-color: coral; */

@@ -5,9 +5,16 @@ export const river_locations = [
     id: "2018",
     min: 180,
     optimum: 230,
-    optimum_max: 350,
+    optimum_max: 370,
     max: 400,
     danger: 480,
+    ranking: {
+      oneStarMax: 200,
+      twoStarMax: 220,
+      threeStarMax: 270,
+      fourStarMax: 330,
+      fiveStarMax: 370,
+    }
   },
   {
     name: "Thun",
@@ -17,6 +24,13 @@ export const river_locations = [
     optimum_max: 190,
     max: 210,
     danger: 350,
+    ranking: {
+      oneStarMax: 100,
+      twoStarMax: 120,
+      threeStarMax: 150,
+      fourStarMax: 170,
+      fiveStarMax: 190
+    }
   },
 ];
 
