@@ -31,6 +31,12 @@ nvm install node # "node" is an alias for the latest version
 In the project directory, you can run:
 
 ```bash
+npm install
+```
+
+to download all required packages. Then,
+
+```bash
 npm start
 ```
 
