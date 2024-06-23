@@ -5,7 +5,7 @@ export const river_locations = [
     id: "2018",
     min: 180,
     optimum: 230,
-    optimum_max: 350,
+    optimum_max: 370,
     max: 400,
     danger: 480,
   },

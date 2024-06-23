@@ -79,7 +79,7 @@ export function render_conditions(_data, _locations) {
     let temp_color_i = temp2color(temp_i);
 
     // then put them into a new container with all info for rendering
-    let render_dict = {
+    render_array[i] = {
       name: _locations[i].name,
       link:
         "https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/" +
@@ -89,7 +89,6 @@ export function render_conditions(_data, _locations) {
       temp: Math.round(temp_i),
       temp_color: temp_color_i,
     };
-    render_array[i] = render_dict;
   }
   return (
     <div className="spotlist">

@@ -4,6 +4,7 @@ import { render_conditions } from "./renderFunctions";
 import { useState, useEffect } from "react";
 
 const parameters = ["flow", "temperature"];
+const year = new Date().getFullYear();
 
 // var fetch_url =
 // "https://api.existenz.ch/apiv1/hydro/latest?locations=2018&parameters=flow%2C%20temperature&app=MagicSwissWeed&version=0.1.0";
@@ -102,9 +103,7 @@ export default function App() {
               BAFU
             </a>
           </div>
-          <div className="Footer_item wide">
-            © 2023 Academic Surf Club Switzerland
-          </div>
+          <div className="Footer_item wide">© {year} Nicola Küng</div>
           <div className="Footer_item">
             <a
               className="Link"
